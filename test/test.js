@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Test from './test.vue'
-import TestCase from '../src/index.js'
+
+import TestCase from '../src/toast.js'
 // import TestCase from '../dist/index'
 
 Vue.use(TestCase, {
-  backgroundEffectEl: '.test-page'
+  duration: 1000,
 })
 
 new Vue({
@@ -12,8 +13,6 @@ new Vue({
   components: {Test},
   template: '<Test/>',
   mounted() {
-    this.$notice({
-      content: '声律启蒙是旧时学校启蒙读物之一，'
-    })
+    this.$toast('A touch Of Zen')
   }
 })

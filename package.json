@@ -2,9 +2,10 @@
   "name": "dear-toast",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/deartoast.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "start": "webpack-dev-server --mode development --config webpack.test.config"
   },
   "devDependencies": {
     "autoprefixer": "9.1.1",
