@@ -1,7 +1,7 @@
 <template>
     <div class="dear-toast-widget" :style="`animation-delay: 0s, ${duration}ms;`" @animationend="onHidden">
-        <div class="toast-content btn-shadow-inset" :class="type" @click="onClickEv">
-            <span v-text="content"></span>
+        <div class="toast-content btn-shadow-inset"
+             :class="type" @click="onClickEv" v-text="content">
         </div>
     </div>
 </template>
@@ -32,45 +32,42 @@
 
 <style lang="scss">
     .dear-toast-widget {
-        position: fixed;
+        position: absolute;
 
-        width: 100vw;
-        /*height: 100vh;*/
-        /*padding: 70vh 10vw 0;*/
+        top: 70%;
+        left: 50%;
 
         will-change: auto;
-        pointer-events: none;
+        text-align: center;
         box-sizing: border-box;
+
+        transform: translate(-50%, -50%);
         animation: toastAnimateShow .5s, toastAnimateHidden .4s;
 
         @keyframes toastAnimateShow {
             from {
                 opacity: 0;
-                transform: translateY(5vh) scale(.8, .8);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1, 1);
+                transform: translate(-50%, 8vh) scale(.8, .8);
             }
         }
 
         @keyframes toastAnimateHidden {
-            from {
-                opacity: 1;
-                transform: translateY(0) scale(1, 1);
-            }
             to {
                 opacity: 0;
-                transform: translateY(5vh) scale(.8, .8);
+                transform: translate(-50%, 4vh) scale(.8, .8);
             }
         }
 
         .toast-content {
-            color: #fff;
+            width: 80vw;
+            overflow: auto;
+            max-height: 30vh;
             padding: 8px 15px;
+
+            color: #fff;
             border-radius: 20px;
-            pointer-events: auto;
             box-shadow: 0 0 15px 4px rgba(0,0,0, 0.1);
+
             &.info {
                 background-color: rgba(58, 58, 58, 0.9);
             }
