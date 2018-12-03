@@ -4,9 +4,7 @@ import Test from './test.vue'
 import TestCase from '../src/toast.js'
 // import TestCase from '../dist/index'
 
-Vue.use(TestCase, {
-  duration: 1400,
-})
+Vue.use(TestCase)
 
 new Vue({
   el: '#app',

@@ -554,7 +554,7 @@ exports.default = {
         var ToastInstance = new ToastConstructor({
           data: (0, _assign2.default)({}, {
             show: true,
-            duration: config.duration
+            duration: config.duration || 1400
           }, options)
         });
 

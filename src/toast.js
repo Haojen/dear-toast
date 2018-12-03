@@ -14,7 +14,7 @@ export default {
         const ToastInstance = new ToastConstructor({
           data: Object.assign({}, {
             show: true,
-            duration: config.duration,
+            duration: config.duration || 1400,
           }, options)
         })
 
