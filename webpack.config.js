@@ -4,8 +4,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: {
-    'index': "./src/index.js",
-    'index.min': './src/index.js'
+    'index': "./src/toast.js",
+    'index.min': './src/toast.js'
   },
   optimization: {
     minimizer: [
@@ -17,12 +17,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     libraryTarget: "umd",
-    library: "DearNotice",
+    library: "DearToast",
     libraryExport: "default"
   },
-  // externals: {
-  //   vue: 'vue'
-  // },
   module: {
     rules: [
       {

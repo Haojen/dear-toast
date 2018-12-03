@@ -5,7 +5,7 @@ import TestCase from '../src/toast.js'
 // import TestCase from '../dist/index'
 
 Vue.use(TestCase, {
-  duration: 1000,
+  duration: 1400,
 })
 
 new Vue({
@@ -13,6 +13,8 @@ new Vue({
   components: {Test},
   template: '<Test/>',
   mounted() {
-    this.$toast('A touch Of Zen')
+    this.$toast({
+      content: 'A touch Of Zen',
+    })
   }
 })

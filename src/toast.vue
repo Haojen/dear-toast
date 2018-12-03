@@ -1,7 +1,7 @@
 <template>
     <div class="dear-toast-widget" :style="`animation-delay: 0s, ${duration}ms;`" @animationend="onHidden">
         <div class="toast-content btn-shadow-inset"
-             :class="type" @click="onClickEv" v-text="content">
+             :class="type" v-text="content">
         </div>
     </div>
 </template>
@@ -11,21 +11,26 @@
     name: "toast",
     data() {
       return {
+        theme: null, // not used
         show: false,
         type: 'info',
         content: null,
-        duration: null
+        duration: null,
+
+        onShow: null,
+        onClose: null,
       }
     },
     methods: {
       onHidden({animationName}) {
         if (animationName === 'toastAnimateHidden') {
+          this.onClose && this.onClose({content: this.content})
           document.body.removeChild(this.$el)
         }
       },
-      onClickEv() {
-        console.log('onClickEv')
-      }
+    },
+    mounted() {
+      this.onShow && this.onShow({content: this.content})
     }
   }
 </script>
