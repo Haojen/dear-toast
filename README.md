@@ -19,19 +19,19 @@
   
 ## Vue 注入时的配置
 
-  Vue.use(DearToast, {
+  ```Vue.use(DearToast, {
     prefix: ''，// 在vue中调用时的名字，默认值: `$toast`
     duration: 1400, // Toast 展现的时长, 默认值：`1400`
-  })
+  })```
   
 ## 使用时的配置
 
-  this.$toast({
+  ```this.$toast({
     content: 'hello', // content 可以是纯字符串，也可以是完整的html
     duration: 1400, // 本次时长
     onShow: () => {}, // 展示时的回调
     onClose: () => {}, // 隐藏时的回调
-  })
+  })```
   
   
   
