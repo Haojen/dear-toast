@@ -64,7 +64,7 @@
         }
 
         .toast-content {
-            width: 80vw;
+            max-width: 80vw;
             overflow: auto;
             max-height: 30vh;
             padding: 8px 15px;

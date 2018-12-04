@@ -1,11 +1,11 @@
 {
   "name": "dear-toast",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --mode development --config webpack.test.config"
+    "start": "webpack-dev-server --mode development --config webpack.test.config --open"
   },
   "devDependencies": {
     "autoprefixer": "9.1.1",
