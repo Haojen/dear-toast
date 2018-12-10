@@ -141,6 +141,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 exports.default = {
   name: "toast",
@@ -247,11 +249,11 @@ var render = function() {
     {
       staticClass: "dear-toast-widget",
       style: "animation-delay: 0s, " + _vm.duration + "ms;",
-      on: { animationend: _vm.onHidden }
+      on: { animationend: _vm.onHidden, webkitAnimationEnd: _vm.onHidden }
     },
     [
       _c("div", {
-        staticClass: "toast-content btn-shadow-inset",
+        staticClass: "toast-content",
         class: _vm.type,
         domProps: { textContent: _vm._s(_vm.content) }
       })
@@ -1013,7 +1015,7 @@ exports = module.exports = __webpack_require__(50)(false);
 
 
 // module
-exports.push([module.i, "\n.dear-toast-widget{position:absolute;top:70%;left:50%;will-change:auto;text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-animation:toastAnimateShow .5s,toastAnimateHidden .4s;animation:toastAnimateShow .5s,toastAnimateHidden .4s\n}\n@-webkit-keyframes toastAnimateShow{\n0%{opacity:0;-webkit-transform:translate(-50%,8vh) scale(.8);transform:translate(-50%,8vh) scale(.8)\n}\n}\n@keyframes toastAnimateShow{\n0%{opacity:0;-webkit-transform:translate(-50%,8vh) scale(.8);transform:translate(-50%,8vh) scale(.8)\n}\n}\n@-webkit-keyframes toastAnimateHidden{\nto{opacity:0;-webkit-transform:translate(-50%,4vh) scale(.8);transform:translate(-50%,4vh) scale(.8)\n}\n}\n@keyframes toastAnimateHidden{\nto{opacity:0;-webkit-transform:translate(-50%,4vh) scale(.8);transform:translate(-50%,4vh) scale(.8)\n}\n}\n.dear-toast-widget .toast-content{max-width:80vw;overflow:auto;max-height:30vh;padding:8px 15px;color:#fff;border-radius:20px;-webkit-box-shadow:0 0 15px 4px rgba(0,0,0,.1);box-shadow:0 0 15px 4px rgba(0,0,0,.1)\n}\n.dear-toast-widget .toast-content.info{background-color:rgba(58,58,58,.9)\n}\n.dear-toast-widget .toast-content.error{background-color:rgba(244,129,73,.9)\n}", ""]);
+exports.push([module.i, "\n.dear-toast-widget{position:absolute;top:70%;left:50%;will-change:auto;text-align:center;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-animation:toastAnimateShow .5s,toastAnimateHidden .4s;animation:toastAnimateShow .5s,toastAnimateHidden .4s\n}\n@-webkit-keyframes toastAnimateShow{\n0%{opacity:0;-webkit-transform:translate(-50%,8vh) scale(.8);transform:translate(-50%,8vh) scale(.8)\n}\n}\n@keyframes toastAnimateShow{\n0%{opacity:0;-webkit-transform:translate(-50%,8vh) scale(.8);transform:translate(-50%,8vh) scale(.8)\n}\n}\n@-webkit-keyframes toastAnimateHidden{\nto{opacity:0;-webkit-transform:translate(-50%,4vh) scale(.8);transform:translate(-50%,4vh) scale(.8)\n}\n}\n@keyframes toastAnimateHidden{\nto{opacity:0;-webkit-transform:translate(-50%,4vh) scale(.8);transform:translate(-50%,4vh) scale(.8)\n}\n}\n.dear-toast-widget .toast-content{max-width:80vw;max-height:30vh;padding:8px 10px;color:#fff;overflow:auto;border-radius:18px;-webkit-box-shadow:0 0 15px 4px rgba(0,0,0,.1);box-shadow:0 0 15px 4px rgba(0,0,0,.1)\n}\n.dear-toast-widget .toast-content.info{background-color:rgba(58,58,58,.9)\n}\n.dear-toast-widget .toast-content.error{background-color:rgba(244,129,73,.9)\n}", ""]);
 
 // exports
 

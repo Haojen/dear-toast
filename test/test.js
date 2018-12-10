@@ -12,7 +12,7 @@ new Vue({
   template: '<Test/>',
   mounted() {
     this.$toast({
-      content: 'A touch Of Zen',
+      content: 'A touch Of Zen A touch Of ZenA touch Of ZenA touch Of ZenA touch Of ZenA touch Of Zen',
     })
   }
 })

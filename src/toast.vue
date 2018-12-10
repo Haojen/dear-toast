@@ -1,6 +1,8 @@
 <template>
-    <div class="dear-toast-widget" :style="`animation-delay: 0s, ${duration}ms;`" @animationend="onHidden">
-        <div class="toast-content btn-shadow-inset"
+    <div class="dear-toast-widget" :style="`animation-delay: 0s, ${duration}ms;`"
+         @animationend="onHidden"
+         @webkitAnimationEnd="onHidden">
+        <div class="toast-content"
              :class="type" v-text="content">
         </div>
     </div>
@@ -38,12 +40,12 @@
 <style lang="scss">
     .dear-toast-widget {
         position: absolute;
-
         top: 70%;
         left: 50%;
 
         will-change: auto;
         text-align: center;
+        width: fit-content;
         box-sizing: border-box;
 
         transform: translate(-50%, -50%);
@@ -65,12 +67,12 @@
 
         .toast-content {
             max-width: 80vw;
-            overflow: auto;
             max-height: 30vh;
-            padding: 8px 15px;
+            padding: 8px 10px;
 
             color: #fff;
-            border-radius: 20px;
+            overflow: auto;
+            border-radius: 18px;
             box-shadow: 0 0 15px 4px rgba(0,0,0, 0.1);
 
             &.info {
