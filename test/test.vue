@@ -1,7 +1,7 @@
 <template>
     <div class="test-page">
-        <button class="modal-trigger" @click="onclickTest">test</button>
-        <button @click="onSingleTest">single text</button>
+        <button class="modal-trigger" @touchstart="onclickTest">test</button>
+        <button @touch="onSingleTest">single text</button>
     </div>
 </template>
 

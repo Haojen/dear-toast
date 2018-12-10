@@ -1,7 +1,7 @@
 <template>
-    <div class="dear-toast-widget" :style="`animation-delay: 0s, ${duration}ms;`"
+    <div class="dear-toast-widget show-toast"
          @animationend="onHidden"
-         @webkitAnimationEnd="onHidden">
+         @webkitAnimationEnd="onHidden" :style="`animation-delay: 0s, ${duration}ms;`">
         <div class="toast-content"
              :class="type" v-text="content">
         </div>
@@ -26,8 +26,8 @@
     methods: {
       onHidden({animationName}) {
         if (animationName === 'toastAnimateHidden') {
-          this.onClose && this.onClose({content: this.content})
           document.body.removeChild(this.$el)
+          this.onClose && this.onClose({content: this.content})
         }
       },
     },
@@ -39,9 +39,11 @@
 
 <style lang="scss">
     .dear-toast-widget {
-        position: absolute;
+
+        position: fixed;
         top: 70%;
         left: 50%;
+        margin: 0 auto;
 
         will-change: auto;
         text-align: center;
@@ -49,17 +51,30 @@
         box-sizing: border-box;
 
         transform: translate(-50%, -50%);
-        animation: toastAnimateShow .5s, toastAnimateHidden .4s;
+        animation: toastAnimateShow .5s;
+
+
+        animation-name: toastAnimateShow, toastAnimateHidden;
+        animation-duration: .5s, .4s;
+
 
         @keyframes toastAnimateShow {
-            from {
+            0% {
                 opacity: 0;
+                top: 70%;
+                left: 50%;
                 transform: translate(-50%, 8vh) scale(.8, .8);
+            }
+            100% {
+                opacity: 1;
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%, -50%), scale(1);
             }
         }
 
         @keyframes toastAnimateHidden {
-            to {
+            100% {
                 opacity: 0;
                 transform: translate(-50%, 4vh) scale(.8, .8);
             }
