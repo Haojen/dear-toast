@@ -41,7 +41,7 @@
     .dear-toast-widget {
 
         position: fixed;
-        top: 70%;
+        top: 60%;
         left: 50%;
         margin: 0 auto;
 
@@ -50,9 +50,7 @@
         width: fit-content;
         box-sizing: border-box;
 
-        transform: translate(-50%, -50%);
-        animation: toastAnimateShow .5s;
-
+        transform: translate3d(-50%, 0, 0);
 
         animation-name: toastAnimateShow, toastAnimateHidden;
         animation-duration: .5s, .4s;
@@ -61,22 +59,18 @@
         @keyframes toastAnimateShow {
             0% {
                 opacity: 0;
-                top: 70%;
-                left: 50%;
-                transform: translate(-50%, 8vh) scale(.8, .8);
+                top: 65%;
             }
             100% {
                 opacity: 1;
-                top: 70%;
-                left: 50%;
-                transform: translate(-50%, -50%), scale(1);
+                top: 60%;
             }
         }
 
         @keyframes toastAnimateHidden {
             100% {
                 opacity: 0;
-                transform: translate(-50%, 4vh) scale(.8, .8);
+                top: 65%;
             }
         }
 
