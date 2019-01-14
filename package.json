@@ -1,8 +1,8 @@
 {
   "name": "dear-toast",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/index.min.js",
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server --mode development --config webpack.test.config --open"
